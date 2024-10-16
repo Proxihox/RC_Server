@@ -44,11 +44,11 @@ if __name__ == "__main__":
         # #p1.stdin.flush()
         # x += 1
         # y += 1
-
-        p2.stdin.write(out1)
+        # pipe.stdin.write(bytes(str(n)+"\n",encoding="ascii"))
+        p2.stdin.write(out1+"\n\n")
         p2.stdin.flush()  # Ensure input is sent immediately
-        in1 = out2 = p2.stdout.readline().strip()
-
+        in1 = p2.stdout.readline().strip()
+        print("out:",in1)
         p1.stdin.write(in1)
         p1.stdin.flush()  # Ensure input is sent immediately
 

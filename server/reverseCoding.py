@@ -1,4 +1,20 @@
-import time
+
+state = 0
 while(True):
-    a,b = map(int,input().split(' '))
-    print(a+b)
+    try:
+        s = input()
+        if(s == "-1"):
+            state = 0
+            print("Main Menu")
+        elif(state == 0):
+            state = int(s)
+            print("Entered problem ",s)
+        elif(state == 1):
+            a,b = map(int,s.split(' '))
+            print(a+b)
+        else:
+            a,b = map(int,s.split(' '))
+            print(a*b)
+    except EOFError:
+        print("EOF")
+   
